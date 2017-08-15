@@ -22,7 +22,7 @@
         <div class="panel-heading">
           <h3 class="panel-title"> 
             <a href="users/<%= photo.user_id %>"> 
-              <%= photo.user %>
+              <%= photo.user_id %>
             </a> 
           </h3>
         </div>
@@ -30,10 +30,14 @@
               <img src="<%= photo.image %>" width="320">
               <p>
                 <% if current_user.liked_photos.include?(photo) %>
-          <i class="fa fa-heart" aria-hidden="true"></i>
-          <% else %>
-          <i class="fa fa-heart-o" aria-hidden="true"></i>
-          <% end %>
+                <a href="/delete_like/<%= photo.id %>" class="btn btn-link">
+                  <i class="fa fa-heart"></i>
+                </a>
+                <% else %>
+                  <a href="/create_like/<%=photo.id %>" class="btn btn-link">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                  </a>
+                <% end %>
         </p>
               <div class="panel-body">
                 <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :photos
   has_many :comments
   has_many :likes
-  belongs_to :username
+  # belongs_to :username
   
   has_many :liked_photos, :through => :likes, :source => :photo
   
