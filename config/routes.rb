@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   # READ
   get "/likes", :controller => "likes", :action => "index"
   get "/likes/:id", :controller => "likes", :action => "show"
+  
 
   # UPDATE
   get "/likes/:id/edit", :controller => "likes", :action => "edit"

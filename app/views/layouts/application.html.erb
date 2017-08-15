@@ -44,6 +44,10 @@
           <li><a href="/likes">Likes</a></li>
           <li><a href="/photos">Photos</a></li>
           <li><a href="/users">All Users</a></li>
+          <% if current_user != nil %>
+            <li><a href="/users/<%=current_user.id%>">My Wall</a></li>
+            <li><a href="/my_likes">MyLikes</a></li>
+          <% end %>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -66,12 +70,13 @@
           </li>
           <li>
             <a href="/users/edit">
-              Edit Profile
+              <%= current_user.username %>
             </a>
           </li>
           <li>
             <a href="/users/sign_out" data-method="delete" rel="nofollow">
               Sign Out
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
             </a>
           </li>
           <% end %>
