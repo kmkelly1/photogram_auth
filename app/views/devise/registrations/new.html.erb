@@ -8,12 +8,13 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
   
-  <!--<label for="username">Username</label>-->
-  <!--<input type="text" name="users[username]" placeholder = "Enter a username">-->
+  <!--<div class="field">-->
+  <!--  
+  <!--</div>-->
   
   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <%= f.label :username %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :username, autocomplete: "off" %>
   </div>
 
   <div class="field">
